@@ -1,0 +1,359 @@
+.doacoes-section {
+    padding: 70px 0;
+    background-color: #0d0d0d;
+    border-top: 1px solid rgba(179, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(179, 0, 0, 0.1);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.section-subtitle {
+    color: #888;
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.doacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
+
+.doacao-card {
+    background: linear-gradient(145deg, #121212, #0a0a0a);
+    border-radius: 12px;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    height: 100%;
+}
+
+.doacao-card:hover {
+    border-color: #b30000;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(179, 0, 0, 0.15);
+}
+
+.doacao-card-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(179, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #b30000;
+    margin: 0 auto 15px;
+    border: 2px solid #222;
+}
+
+.card-title {
+    font-size: 22px;
+    margin-bottom: 5px;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card-subtitle {
+    color: #888;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.benefits-list {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.benefits-list li {
+    color: #aaa;
+    font-size: 14px;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+}
+
+.benefits-list i {
+    color: #b30000;
+    margin-right: 10px;
+    font-size: 12px;
+    min-width: 12px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(179, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 15px;
+}
+
+.stat {
+    text-align: center;
+    flex: 1;
+}
+
+.stat-value {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    color: #b30000;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 2px;
+}
+
+.stat-label {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-footer {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.donate-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(145deg, #b30000, #990000);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.donate-btn:hover {
+    background: linear-gradient(145deg, #cc0000, #b30000);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(179, 0, 0, 0.3);
+}
+
+.donate-btn i {
+    font-size: 14px;
+}
+
+.min-donation {
+    color: #666;
+    font-size: 12px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.rewards-section {
+    background: rgba(26, 26, 26, 0.5);
+    border-radius: 12px;
+    padding: 30px;
+    border: 1px solid #222;
+}
+
+.rewards-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rewards-header h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.rewards-header h3 i {
+    color: #b30000;
+}
+
+.rewards-subtitle {
+    color: #888;
+    font-size: 14px;
+}
+
+.rewards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.reward-card {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(13, 13, 13, 0.8);
+    border-radius: 10px;
+    border: 1px solid #222;
+    transition: all 0.3s ease;
+}
+
+.reward-card:hover {
+    border-color: #b30000;
+}
+
+.reward-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(179, 0, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #b30000;
+    flex-shrink: 0;
+    border: 2px solid #222;
+}
+
+.reward-content {
+    flex: 1;
+}
+
+.reward-content h4 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 8px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.reward-content p {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.reward-content strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.reward-badge {
+    display: inline-block;
+    background: rgba(179, 0, 0, 0.1);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(179, 0, 0, 0.3);
+}
+
+.badge-text {
+    color: #b30000;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rewards-note {
+    background: rgba(179, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 15px;
+    border: 1px solid rgba(179, 0, 0, 0.1);
+}
+
+.rewards-note p {
+    color: #888;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+}
+
+.rewards-note i {
+    color: #b30000;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .doacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .doacoes-section {
+        padding: 50px 0;
+    }
+    
+    .doacoes-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .rewards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .rewards-section {
+        padding: 20px;
+    }
+    
+    .reward-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .reward-icon {
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .doacoes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .doacoes-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
