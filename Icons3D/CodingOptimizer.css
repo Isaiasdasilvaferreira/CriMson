@@ -1,0 +1,428 @@
+.image-placeholder {
+    flex: 1;
+    background: #0a0a0a;
+    min-height: 585px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(120, 0, 0, 0.4);
+}
+
+.cyber-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(120, 0, 0, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 0, 0, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 30px); }
+}
+
+.system-monitor {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    z-index: 2;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+}
+
+.monitor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(179, 0, 0, 0.3);
+}
+
+.header-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #b30000;
+    box-shadow: 0 0 10px #b30000;
+    animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.status-text {
+    font-size: 11px;
+    color: #b30000;
+    font-weight: 500;
+}
+
+.monitor-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+.metric-card {
+    background: rgba(30, 30, 30, 0.7);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #b30000, transparent);
+}
+
+.metric-icon {
+    font-size: 12px;
+    color: #b30000;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.metric-value {
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.metric-graph {
+    height: 4px;
+    background: rgba(80, 0, 0, 0.3);
+    border-radius: 2px;
+    margin-bottom: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+.graph-fill {
+    position: absolute;
+    height: 100%;
+    background: #b30000;
+    border-radius: 2px;
+    animation: fillGraph 1.5s ease-out;
+    box-shadow: 0 0 8px #b30000;
+}
+
+@keyframes fillGraph {
+    from { width: 0%; }
+}
+
+.graph-line {
+    position: absolute;
+    width: 30px;
+    height: 2px;
+    background: #ffffff;
+    box-shadow: 0 0 10px #ffffff;
+    animation: scanLine 2s infinite linear;
+}
+
+@keyframes scanLine {
+    0% { left: -30px; }
+    100% { left: 100%; }
+}
+
+.metric-label {
+    font-size: 10px;
+    color: #cccccc;
+    opacity: 0.8;
+}
+
+.system-log {
+    background: rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 12px;
+    height: 110px;
+    overflow: hidden;
+}
+
+.log-title {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(179, 0, 0, 0.3);
+}
+
+.log-entries {
+    height: calc(100% - 25px);
+    overflow-y: auto;
+}
+
+.log-entry {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    border-bottom: 1px solid rgba(50, 50, 50, 0.3);
+    font-size: 11px;
+    animation: fadeInLog 0.5s ease-out;
+    animation-fill-mode: both;
+}
+
+.log-entry:nth-child(1) { animation-delay: 0.1s; }
+.log-entry:nth-child(2) { animation-delay: 0.2s; }
+.log-entry:nth-child(3) { animation-delay: 0.3s; }
+.log-entry:nth-child(4) { animation-delay: 0.4s; }
+.log-entry:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInLog {
+    from { opacity: 0; transform: translateX(-5px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.log-time {
+    color: #b30000;
+    min-width: 55px;
+    font-size: 10px;
+}
+
+.log-message {
+    color: #ffffff;
+    flex: 1;
+}
+
+.system-data {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.data-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.data-item {
+    background: rgba(30, 30, 30, 0.6);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 4px;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.data-label {
+    font-size: 11px;
+    color: #cccccc;
+}
+
+.data-value {
+    font-size: 12px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.process-monitor {
+    background: rgba(25, 25, 25, 0.6);
+    border: 1px solid rgba(179, 0, 0, 0.2);
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.process-title {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(179, 0, 0, 0.3);
+}
+
+.process-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.process {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.process-name {
+    font-size: 11px;
+    color: #ffffff;
+    width: 70px;
+    text-transform: uppercase;
+}
+
+.process-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(80, 0, 0, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.process-fill {
+    height: 100%;
+    background: #b30000;
+    border-radius: 2px;
+    animation: fillProcess 2s ease-out;
+    box-shadow: 0 0 6px #b30000;
+}
+
+@keyframes fillProcess {
+    from { width: 0%; }
+}
+
+.process-value {
+    font-size: 11px;
+    color: #ffffff;
+    min-width: 30px;
+    text-align: right;
+}
+
+.monitor-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid rgba(179, 0, 0, 0.3);
+    font-size: 10px;
+}
+
+.footer-time {
+    color: #cccccc;
+}
+
+.time-value {
+    color: #b30000;
+    font-weight: 600;
+}
+
+.footer-status .status-online {
+    color: #b30000;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(179, 0, 0, 0.5);
+    animation: statusGlow 2s infinite;
+}
+
+@keyframes statusGlow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.scan-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(179, 0, 0, 0.7), 
+        transparent);
+    box-shadow: 0 0 15px rgba(179, 0, 0, 0.5);
+    animation: scanSweep 5s linear infinite;
+    z-index: 3;
+    pointer-events: none;
+}
+
+@keyframes scanSweep {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+.glitch-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(rgba(179, 0, 0, 0.02) 50%, transparent 50%),
+        linear-gradient(90deg, rgba(179, 0, 0, 0.02) 50%, transparent 50%);
+    background-size: 100px 100px;
+    animation: glitchMove 0.2s infinite;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: overlay;
+}
+
+@keyframes glitchMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(2px, 1px); }
+}
+
+/* Scrollbar personalizada */
+.log-entries::-webkit-scrollbar {
+    width: 3px;
+}
+
+.log-entries::-webkit-scrollbar-track {
+    background: rgba(30, 30, 30, 0.5);
+}
+
+.log-entries::-webkit-scrollbar-thumb {
+    background: #b30000;
+    border-radius: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .monitor-grid {
+        gap: 8px;
+    }
+    
+    .metric-card {
+        padding: 10px;
+    }
+    
+    .metric-value {
+        font-size: 18px;
+    }
+    
+    .system-log,
+    .process-monitor {
+        padding: 10px;
+    }
+    
+    .data-item {
+        padding: 6px;
+    }
+}
